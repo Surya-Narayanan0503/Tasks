@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="G:\Study\jQueryBasics-master\js\jquery-2.1.4.js"></script>
+<style>
+th{
+    color: black;
+    padding:  97px;
+    border: 1px solid black;
+    
+
+
+}
+
+
+</style>
+</head>
+<body>
+        <table>
+                <th id="a"></th>
+                <th id="b"></th>
+                <th id="c"></th>
+
+        </table>
+        <button id="toggle">Toggle Colors</button>
+        <button id="round">Toggle Round Borders</button>
+        <button id="add">Add New Box</button>
+    <script>
+        $(document).ready(function(){
+            $("#toggle").click(function(){
+               var c=["red","yellow","black","purple","green"]
+                $("th").each(function(){
+                    var random=c[Math.floor(c.length*Math.random())]
+                    $(this).css("background-color",random)
+
+                })
+            })
+            $("#round").click(function(){
+                $("th").each(function(){
+                    $(this).css("border-radius","100%")
+
+
+                })
+               
+            })
+            $("#add").click(function(){
+                $("table").append("<th>" +"</th>")
+            })
+
+
+            
+        })
+    </script>
+</body>
+</html>

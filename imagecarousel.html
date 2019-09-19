@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="G:\Study\jQueryBasics-master\js\jquery-2.1.4.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <img id="img" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201310/breaking-bad_660_100113084027.jpg" alt=""/>
+    </div>
+    <div id="button">
+        <button id="start">start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var images=[
+                "https://www.indiewire.com/wp-content/uploads/2018/11/Screen-Shot-2018-11-15-at-5.06.17-PM.png?w=780",
+                "https://cdn.vox-cdn.com/thumbor/DZFBVFdHlDJgxVRfLbVTPvaCyfE=/0x0:3000x2000/1200x800/filters:focal(1264x353:1744x833)/cdn.vox-cdn.com/uploads/chorus_image/image/62220729/breaking_bad_movie_AMC_Ringer.0.jpg",
+                "https://cdn1us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/02/aaron-paul-breaking-bad-season-5-amc.jpg?itok=5IF8EvBD",
+                "https://thebottomline.as.ucsb.edu/wp-content/uploads/2013/10/breakingbad01_web-696x389.jpg",
+                "https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2012/08/10/Style/Images/BB_504_UC_0504_0007.jpg?uuid=0ECeVuMpEeGiXhUGe7MYSQ"
+            ];
+            var myvar;
+
+            $("#start").click(function(){
+                myarr=setInterval(function(){
+                    var image=images[Math.floor(images.length * Math.random())];
+                    $("#img").attr("src",image);
+                },1000);
+            });
+
+            $("#stop").click(function(){
+                clearInterval(myarr);
+            });
+        });
+    </script>
+    
+</body>
+</html>
